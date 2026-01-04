@@ -15,7 +15,8 @@ public class CandidateEntity {
 
     private String name;
 
-    @Pattern(regexp = "ˆ(?!\\s*$).+", message = "O campo username não deve conter espaços")
+
+    @Pattern(regexp = "^[a-zA-Z0-9._]+$", message = "O username deve conter apenas letras, números, pontos ou underline")
     private String username;
 
     @Email(message = "O campo email deve conter um e-mail válido")
