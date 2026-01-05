@@ -1,6 +1,7 @@
 package br.com.duartedev.gestao_vagas.modules.candidate.controllers;
 
 
+import br.com.duartedev.gestao_vagas.exceptions.UserFoundExceptionDTO;
 import br.com.duartedev.gestao_vagas.modules.candidate.CandidateEntity;
 import br.com.duartedev.gestao_vagas.modules.candidate.CandidateRepository;
 import jakarta.validation.Valid;
@@ -23,7 +24,12 @@ public class CandidateController {
 
     @PostMapping("/")
     public CandidateEntity create(@Valid @RequestBody CandidateEntity candidate) {
-       return this.candidateRepository.save(candidate);
+        this.candidateRepository
+                .findByUsernameOrEmail(candidate.getUsername(), candidate.getEmail())
+                .ifPresent((_)->{
+                    throw new UserFoundExceptionDTO();
+                });
+        return this.candidateRepository.save(candidate);
     }
 
 }
