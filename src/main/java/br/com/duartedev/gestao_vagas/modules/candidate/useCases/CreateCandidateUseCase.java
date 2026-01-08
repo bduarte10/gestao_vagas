@@ -1,4 +1,4 @@
-package br.com.duartedev.gestao_vagas.modules.candidate.UseCases;
+package br.com.duartedev.gestao_vagas.modules.candidate.useCases;
 
 import br.com.duartedev.gestao_vagas.exceptions.UserFoundExceptionDTO;
 import br.com.duartedev.gestao_vagas.modules.candidate.CandidateEntity;

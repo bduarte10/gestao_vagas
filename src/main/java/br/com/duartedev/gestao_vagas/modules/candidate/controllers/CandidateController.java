@@ -3,7 +3,7 @@ package br.com.duartedev.gestao_vagas.modules.candidate.controllers;
 
 import br.com.duartedev.gestao_vagas.exceptions.UserFoundExceptionDTO;
 import br.com.duartedev.gestao_vagas.modules.candidate.CandidateEntity;
-import br.com.duartedev.gestao_vagas.modules.candidate.UseCases.CreateCandidateUseCase;
+import br.com.duartedev.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
