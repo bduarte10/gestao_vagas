@@ -20,9 +20,13 @@ public class JobEntity {
     private String benefits;
     private String level;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", nullable = false)
+    @ManyToOne()
+    @JoinColumn(name = "company_id", insertable = false, updatable = false)
+    private CompanyEntity companyEntity;
+
+    @Column(name = "company_id", nullable = false)
     private UUID companyId;
+
 
     @CreationTimestamp
     private LocalDateTime createdAt;
